@@ -12,135 +12,42 @@
         </div>
   
         <!-- Pricing Cards -->
-        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <!-- Basic Plan -->
-          <div class="border border-gray-200 rounded-lg p-8 relative">
+        <div class="grid md:grid-cols-2 gap-8 w-full">
+
+          <!-- Plans -->
+          <div v-for="plan in plans" :key="plan.title" class="rounded-lg p-8 relative border" :class="plan.background + ' ' + plan.textColor + ' ' + plan.borderColor">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
             <div class="inline-block mb-6">
-              <span class="text-indigo-600 border border-indigo-200 rounded-full px-4 py-1 text-sm font-medium">
-                BASIC PLAN
+              <span class="text-[#5A72EA] border border-indigo-200 rounded-full px-4 py-1 text-sm font-medium" :class="plan.background === 'bg-white' ? 'text-gray-900' : 'text-white'">
+                {{ plan.title }}
               </span>
             </div>
             
             <div class="flex items-baseline mb-6">
-              <span class="text-5xl font-bold">$0</span>
-              <span class="text-gray-600 ml-2">per month</span>
-            </div>
-            
-            <p class="text-gray-600 mb-8">
-              Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus
-            </p>
-            
-            <ul class="space-y-4 mb-8">
-              <li class="flex items-center">
-                <div class="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span>Limited access library</span>
-              </li>
-              <li class="flex items-center">
-                <div class="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span>Commercial license</span>
-              </li>
-              <li class="flex items-center">
-                <div class="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span>Hotline support 24/7</span>
-              </li>
-              <li class="flex items-center">
-                <div class="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span>100+ HTML UI Elements</span>
-              </li>
-              <li class="flex items-center">
-                <div class="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span>EaCommerce builder</span>
-              </li>
-            </ul>
-            
-            <button class="bg-indigo-500 hover:bg-indigo-600 text-white py-3 px-6 rounded-md transition-colors w-full md:w-auto">
-              Join now
-            </button>
-          </div>
-          
-          <!-- Premium Plan -->
-          <div class="bg-indigo-500 rounded-lg p-8 text-white relative">
-            <div class="inline-block mb-6">
-              <span class="border border-indigo-300 rounded-full px-4 py-1 text-sm font-medium">
-                PREMIUM PLAN
-              </span>
-            </div>
-            
-            <div class="flex items-baseline mb-6">
-              <span class="text-5xl font-bold">$99</span>
+              <span class="text-5xl font-bold">{{ plan.price }}</span>
               <span class="ml-2">per month</span>
             </div>
             
             <p class="mb-8">
-              On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment
+              {{ plan.description }}
             </p>
             
-            <ul class="space-y-4 mb-8">
-              <li class="flex items-center">
-                <div class="w-5 h-5 rounded-full bg-white flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-indigo-500" viewBox="0 0 20 20" fill="currentColor">
+            <button class="py-3 px-6 rounded-md transition-colors w-full md:w-auto" :class="plan.buttonBackground + ' ' + plan.buttonTextColor" @click="$emit('subscribe', plan.title)">
+              {{ plan.buttonText }}
+            </button>
+          </div>
+          <ul class="space-y-4 mb-8 my-auto">
+              <li v-for="feature in plan.features" :key="feature" class="flex items-center">
+                <div class="w-5 h-5 rounded-full flex items-center justify-center mr-3" :class="plan.background === 'bg-white' ? 'bg-[#5A72EA]' : 'bg-white'">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" :class="plan.background === 'bg-white' ? 'text-white' : 'text-[#5A72EA]'" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                   </svg>
                 </div>
-                <span>Limited access library</span>
-              </li>
-              <li class="flex items-center">
-                <div class="w-5 h-5 rounded-full bg-white flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-indigo-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span>Commercial license</span>
-              </li>
-              <li class="flex items-center">
-                <div class="w-5 h-5 rounded-full bg-white flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-indigo-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span>Hotline support 24/7</span>
-              </li>
-              <li class="flex items-center">
-                <div class="w-5 h-5 rounded-full bg-white flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-indigo-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span>300+ HTML UI Elements</span>
-              </li>
-              <li class="flex items-center">
-                <div class="w-5 h-5 rounded-full bg-white flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-indigo-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <span>EaCommerce builder</span>
+                <span>{{ feature }}</span>
               </li>
             </ul>
-            
-            <button class="bg-white text-indigo-600 hover:bg-indigo-50 py-3 px-6 rounded-md transition-colors w-full md:w-auto">
-              Join now
-            </button>
+            </div>
           </div>
         </div>
       </div>
@@ -148,7 +55,46 @@
   </template>
   
   <script setup>
-  // No additional script needed for this static section
+  
+
+  const plans = [
+    {
+      title: 'Basic Plan',
+      price: '$0',
+      features: [
+        'Limited access library',
+        'Commercial license',
+        'Hotline support 24/7',
+        '300+ HTML UI Elements',
+        'EaCommerce builder'
+      ],
+      description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus',
+      buttonText: 'Join now',
+      background: 'bg-white',
+      textColor: 'text-gray-900',
+      borderColor: 'border-gray-200',
+      buttonBackground: 'bg-[#5A72EA]',
+      buttonTextColor: 'text-white',
+    },
+    {
+      title: 'PREMIUM PLAN',
+      price: '$99',
+      features: [
+        'Limited access library',
+        'Commercial license',
+        'Hotline support 24/7', 
+        '300+ HTML UI Elements',
+        'EaCommerce builder'
+      ],
+      description: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus',
+      buttonText: 'Join now',
+      background: 'bg-gradient-to-r from-[#5A72EA] to-[#8468B1]',
+      textColor: 'text-white',
+      borderColor: 'border-indigo-300',
+      buttonBackground: 'bg-white text-[#5A72EA]',
+      buttonTextColor: 'text-[#5A72EA]',
+    }
+  ]
   </script>
   
   <style scoped>
