@@ -9,8 +9,7 @@
         <!-- Company Logos -->
          <div class="flex flex-wrap justify-center items-center gap-22 md:gap-x-40">
 
-           <div v-for="company in companies" :key="company.name">
-            <div v-html="company.logo" class="w-32 h-16 md:w-40 md:h-20"></div>
+           <div v-for="company in companies" :key="company.name" v-html="company.logo">
         </div>
           </div>
       </div>

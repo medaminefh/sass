@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+.text-primary {
+    color:#5A72EA
+}
+
+.bg-primary {
+    background-color:#5A72EA
+}
+
+.text-secondary {
+    color:#8468B1
+}
+
+.bg-secondary {
+    background-color:#8468B1
+}
+
+.bg-gradient {
+    background: linear-gradient(90deg, #5A72EA 0%, #8468B1 100%);
+}
