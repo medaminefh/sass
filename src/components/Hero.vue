@@ -63,7 +63,7 @@
     </main>
 
     <!-- Background Elements -->
-    <div class="absolute w-[150%] h-[150%] bottom-0 -left-[50%] md:w-[130%] md:h-[110%] md:bottom-[10%] md:-left-[15%] bg-gradient-to-b -rotate-5 from-[#5A72EA] to-[#8468B1] -z-10"></div>
+    <div class="absolute w-[160%] h-[150%] bottom-0 -left-[50%] md:w-[130%] md:h-[110%] md:bottom-[10%] md:-left-[15%] bg-gradient-to-b -rotate-5 from-[#5A72EA] to-[#8468B1] -z-10"></div>
     <div class="absolute w-[150%] h-[150%] bottom-0 -right-[50%] md:w-[150%] md:h-[100%] md:bottom-[10%] md:-right-[13%] rotate-5 bg-[#5A72EA] opacity-30 -z-20"></div>
   </div>
 </template>
