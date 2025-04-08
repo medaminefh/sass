@@ -1,6 +1,8 @@
 <template>
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-6">
+    <section class="py-20 bg-white relative z-10">
+      <!-- circle -->
+      <div class="-z-10 absolute w-[150px] h-[150px] lg:w-[250px] lg:h-[250px] bg-gradient-to-b from-[#5A72EA] to-[#8468B1] rounded-full top-0 -left-[75px] lg:-top-0 lg:-left-[120px]"></div>
+      <div class="container mx-auto px-6 z-10">
         <!-- Section Header -->
         <div class="text-center mb-16 max-w-3xl mx-auto">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">

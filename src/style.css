@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
 .text-primary {
-    color:#5A72EA
+	color: #5a72ea;
+}
+
+html {
+	overflow-x: hidden;
 }
 
 .bg-primary {
-    background-color:#5A72EA
+	background-color: #5a72ea;
 }
 
 .text-secondary {
-    color:#8468B1
+	color: #8468b1;
 }
 
 .bg-secondary {
-    background-color:#8468B1
+	background-color: #8468b1;
 }
 
 .bg-gradient {
-    background: linear-gradient(90deg, #5A72EA 0%, #8468B1 100%);
+	background: linear-gradient(90deg, #5a72ea 0%, #8468b1 100%);
 }
